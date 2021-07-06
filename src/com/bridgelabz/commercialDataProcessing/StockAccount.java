@@ -2,33 +2,41 @@ package com.bridgelabz.commercialDataProcessing;
 
 import java.util.LinkedList;
 
-public class StockAccount {
+public class StockAccount 
+{
 	int noOfStockShares;
 	String StockSymbol;
 	double amountOfStock;
 
-	public int getNoOfStockShares() {
+	public int getNoOfStockShares() 
+	{
 		return noOfStockShares;
 	}
-	public void setNoOfStockShares(int noOfStockShares) {
+	public void setNoOfStockShares(int noOfStockShares) 
+	{
 		this.noOfStockShares = noOfStockShares;
 	}
-	public String getStockSymbol() {
+	public String getStockSymbol() 
+	{
 		return StockSymbol;
 	}
-	public void setStockSymbol(String stockSymbol) {
+	public void setStockSymbol(String stockSymbol) 
+	{
 		StockSymbol = stockSymbol;
 	}
 	
-	public double getAmountOfStock() {
+	public double getAmountOfStock() 
+	{
 		return amountOfStock;
 	}
-	public void setAmountOfStock(double amountOfStock) {
+	public void setAmountOfStock(double amountOfStock) 
+	{
 		this.amountOfStock = amountOfStock;
 	}
 	
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "StockAccount [noOfStockShares=" + noOfStockShares + ", StockSymbol=" + StockSymbol + ", amountOfStock="
 				+ amountOfStock + "]";
 	}
@@ -44,7 +52,8 @@ public class StockAccount {
 	//add shares of stock to account
 	void buy(int noOfStocks,String symbol)
 	{
-		for (CompanyShares companyShares : companyList) {
+		for (CompanyShares companyShares : companyList) 
+		{
 			if(companyShares.getStockSymbol().equals(symbol))
 			{
 				if(noOfStocks<companyShares.getNumOfCompanyShares())
@@ -67,7 +76,8 @@ public class StockAccount {
 	// to sell the stock 
 	void sell(int noOfStocks,String symbol)
 	{
-		for (CompanyShares companyShares : companyList) {
+		for (CompanyShares companyShares : companyList) 
+		{
 			if(companyShares.getStockSymbol().equals(symbol))
 			{
 				if(noOfStockShares>noOfStocks)
@@ -85,7 +95,7 @@ public class StockAccount {
 				System.out.println("Invalid Company Symbol");
 		}
 	}
-	//o print the report
+	//To print the report
 	void printReport()
 	{
 		for (CompanyShares companyShares : companyList) {

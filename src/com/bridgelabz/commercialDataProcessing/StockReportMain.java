@@ -2,16 +2,19 @@ package com.bridgelabz.commercialDataProcessing;
 
 import java.util.Scanner;
 
-public class StockReportMain {
+public class StockReportMain 
+{
 
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
 		Scanner scanner = new Scanner(System.in);
 		StockAccount stockAccount = new StockAccount();
 		
 		System.out.println("Enter the number of company shares to be added :");
 		int noOfCompanyShares = scanner.nextInt();
 		
-		for (int index = 0; index < noOfCompanyShares; index++) {
+		for (int index = 0; index < noOfCompanyShares; index++) 
+		{
 			CompanyShares companyShares = new CompanyShares();
 			System.out.println("Enter the stock Symbol");
 			companyShares.setStockSymbol(scanner.next());
@@ -20,6 +23,7 @@ public class StockReportMain {
 			stockAccount.addCompanyShares(companyShares);
 			System.out.println("Enter the share price :");
 			companyShares.setSharePrice(scanner.nextDouble());
+			stockAccount.addCompanyShares(companyShares);
 		}
 		
 		System.out.println("Enter the company Symbol to buy:");
@@ -33,6 +37,8 @@ public class StockReportMain {
 		System.out.println("Enter the number of sell:");
 		noOfShares = scanner.nextInt();
 		stockAccount.sell(noOfShares, companySymbol);
+		scanner.close();
+		stockAccount.printReport();
 	}
 
 }
